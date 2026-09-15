@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arpit Jewelrys — Fine Gold &amp; Silver Jewellery, Itarsi</title>
+<meta name="description" content="Arpit Jewelrys, Near Main Market, Itarsi — handcrafted gold and silver earrings and necklaces with transparent, live-rate pricing. Visit us, 10 AM–9 PM.">
+<style>
+/* =====================================================================
+   ARPIT JEWELRYS — STYLESHEET
+   Palette: deep maroon, royal gold, warm ivory.
+   Display type: Cormorant Garamond · Body/UI type: Jost
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap');
+
+:root{
+  /* -- color tokens -- */
+  --maroon-deep:   #43101D;
+  --maroon-rich:   #6B1B2B;
+  --maroon-line:   #8A2436;
+  --gold-royal:    #A9762F;
+  --gold-bright:   #C9A24B;
+  --gold-light:    #E4CE9C;
+  --ivory:         #FBF6EE;
+  --ivory-deep:    #F2E9D8;
+  --ink:           #2B1912;
+  --ink-soft:      #6B584C;
+  --white:         #FFFFFF;
+
+  /* -- type -- */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Jost', 'Segoe UI', Arial, sans-serif;
+
+  /* -- layout -- */
+  --page-max: 1180px;
+  --gutter: clamp(20px, 5vw, 56px);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --shadow-card: 0 10px 30px -18px rgba(43,25,18,0.45);
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+/* ---------------------------------------------------------------------
+   RESET / BASE
+   --------------------------------------------------------------------- */
+*, *::before, *::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-weight:400;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ margin:0; padding:0; list-style:none; }
+button{ font-family:inherit; cursor:pointer; }
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  color:var(--maroon-deep);
+  margin:0;
+  line-height:1.15;
+  font-weight:600;
+}
+p{ margin:0; }
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *, *::before, *::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+}
+
+:focus-visible{
+  outline:2px solid var(--gold-royal);
+  outline-offset:3px;
+}
+
+.wrap{
+  max-width:var(--page-max);
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+}
+
+.section{ padding-block: clamp(52px, 9vw, 108px); }
+.section--tight{ padding-block: clamp(36px, 6vw, 64px); }
+.section--ivory-deep{ background:var(--ivory-deep); }
+.section--maroon{ background:var(--maroon-deep); color:var(--ivory); }
+.section--maroon h2, .section--maroon h3{ color:var(--ivory); }
+
+.section-head{
+  max-width:640px;
+  margin-bottom: clamp(28px, 5vw, 48px);
+}
+.section-head.center{ margin-inline:auto; text-align:center; }
+.section-head h2{
+  font-size:clamp(1.9rem, 1.5rem + 1.6vw, 2.75rem);
+  font-style:italic;
+  font-weight:600;
+}
+.section-head .kicker{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:0.78rem;
+  letter-spacing:.06em;
+  color:var(--gold-royal);
+  margin-bottom:10px;
+}
+.section-head.center .kicker{ justify-content:center; }
+.kicker .diamond{
+  width:7px; height:7px;
+  background:var(--gold-royal);
+  transform:rotate(45deg);
+  flex:none;
+}
+.section-head p{ color:var(--ink-soft); margin-top:12px; font-size:1.02rem; }
+.section--maroon .section-head p{ color:#E7D6C7; }
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 30px;
+  border-radius:2px;
+  font-family:var(--font-body);
+  font-size:0.95rem;
+  font-weight:500;
+  border:1px solid transparent;
+  transition:transform .35s var(--ease), background .3s, color .3s, border-color .3s;
+  white-space:nowrap;
+}
+.btn:hover{ transform:translateY(-2px); }
+.btn-primary{
+  background:var(--gold-royal);
+  color:var(--ivory);
+}
+.btn-primary:hover{ background:var(--maroon-deep); }
+.btn-outline{
+  background:transparent;
+  border-color:var(--gold-light);
+  color:var(--maroon-deep);
+}
+.btn-outline:hover{ border-color:var(--gold-royal); background:rgba(169,118,47,0.08); }
+.section--maroon .btn-outline{ border-color:rgba(228,206,156,0.5); color:var(--ivory); }
+.section--maroon .btn-outline:hover{ background:rgba(228,206,156,0.12); border-color:var(--gold-light); }
+
+/* ---------------------------------------------------------------------
+   HEADER / NAV
+   --------------------------------------------------------------------- */
+.site-header{
+  position:sticky; top:0; z-index:100;
+  background:rgba(251,246,238,0.92);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--gold-light);
+}
+.site-header .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-block:16px;
+}
+.brand{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+.brand .brand-name{
+  font-family:var(--font-display);
+  font-size:1.5rem;
+  font-weight:600;
+  color:var(--maroon-deep);
+  letter-spacing:.01em;
+}
+.brand .brand-sub{
+  font-size:0.62rem;
+  letter-spacing:.18em;
+  color:var(--gold-royal);
+  margin-top:3px;
+}
+
+.main-nav{ display:none; }
+.main-nav ul{ display:flex; gap:34px; align-items:center; }
+.main-nav a{
+  font-size:0.92rem;
+  color:var(--maroon-deep);
+  position:relative;
+  padding-bottom:4px;
+}
+.main-nav a::after{
+  content:"";
+  position:absolute; left:0; right:100%; bottom:0;
+  height:1px; background:var(--gold-royal);
+  transition:right .3s var(--ease);
+}
+.main-nav a:hover::after, .main-nav a.active::after{ right:0; }
+.main-nav a.active{ color:var(--gold-royal); }
+
+.header-actions{ display:flex; align-items:center; gap:14px; }
+.call-btn{
+  display:none;
+  align-items:center;
+  gap:8px;
+  font-size:0.85rem;
+  color:var(--maroon-deep);
+  border:1px solid var(--gold-light);
+  padding:9px 16px;
+}
+.call-btn:hover{ border-color:var(--gold-royal); }
+
+.nav-toggle{
+  background:none; border:none; padding:6px;
+  display:flex; flex-direction:column; gap:5px;
+}
+.nav-toggle span{
+  width:24px; height:2px; background:var(--maroon-deep);
+  transition:transform .3s var(--ease), opacity .3s;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+.mobile-nav{
+  max-height:0;
+  overflow:hidden;
+  background:var(--ivory);
+  border-bottom:1px solid var(--gold-light);
+  transition:max-height .35s var(--ease);
+}
+.mobile-nav.is-open{ max-height:320px; }
+.mobile-nav ul{ padding:8px var(--gutter) 20px; display:flex; flex-direction:column; gap:2px; }
+.mobile-nav a{
+  display:block;
+  padding:12px 0;
+  font-size:1.05rem;
+  border-bottom:1px solid rgba(169,118,47,0.15);
+  color:var(--maroon-deep);
+}
+.mobile-nav .call-btn{ display:flex; margin-top:14px; width:fit-content; }
+
+@media (min-width:900px){
+  .main-nav{ display:block; }
+  .call-btn{ display:flex; }
+  .nav-toggle, .mobile-nav{ display:none; }
+}
+
+/* ---------------------------------------------------------------------
+   HERO
+   --------------------------------------------------------------------- */
+.hero{
+  position:relative;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(169,118,47,0.16), transparent 60%),
+    var(--ivory);
+  padding-top:clamp(48px, 8vw, 88px);
+  overflow:hidden;
+}
+.hero-inner{
+  max-width:760px;
+  margin-inline:auto;
+  text-align:center;
+  padding-inline:var(--gutter);
+}
+.hero .kicker{
+  justify-content:center;
+  display:flex; align-items:center; gap:10px;
+  font-size:0.8rem; letter-spacing:.08em; color:var(--gold-royal);
+  margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(2.1rem, 1.5rem + 3.3vw, 3.6rem);
+  font-style:italic;
+  font-weight:600;
+}
+.hero h1 em{ color:var(--gold-royal); font-style:italic; }
+.hero .tagline{
+  margin-top:20px;
+  font-family:var(--font-display);
+  font-size:clamp(1.05rem, .95rem + .5vw, 1.35rem);
+  color:var(--maroon-rich);
+  font-style:italic;
+}
+.hero .lede{
+  margin-top:18px;
+  color:var(--ink-soft);
+  font-size:1.02rem;
+  max-width:520px;
+  margin-inline:auto;
+}
+.hero .hero-ctas{
+  margin-top:32px;
+  display:flex; gap:16px; justify-content:center; flex-wrap:wrap;
+}
+
+/* right-to-left auto scrolling image marquee */
+.marquee{
+  margin-top:clamp(40px, 7vw, 64px);
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  border-top:1px solid var(--gold-light);
+  border-bottom:1px solid var(--gold-light);
+  padding-block:22px;
+}
+.marquee-track{
+  display:flex;
+  gap:18px;
+  width:max-content;
+  animation:marquee-scroll 34s linear infinite;
+}
+.marquee:hover .marquee-track{ animation-play-state:paused; }
+.marquee-track img{
+  height:120px; width:120px;
+  object-fit:cover;
+  border:1px solid var(--gold-light);
+  background:var(--white);
+}
+@keyframes marquee-scroll{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+@media (min-width:640px){
+  .marquee-track img{ height:150px; width:150px; }
+}
+
+/* ---------------------------------------------------------------------
+   CATEGORY CARDS ("See What We Have")
+   --------------------------------------------------------------------- */
+.category-grid{
+  display:grid;
+  gap:22px;
+  grid-template-columns:1fr;
+}
+@media (min-width:640px){
+  .category-grid{ grid-template-columns:1fr 1fr; }
+}
+.category-card{
+  position:relative;
+  display:block;
+  border:1px solid var(--gold-light);
+  background:var(--white);
+  overflow:hidden;
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.category-card:hover{ transform:translateY(-5px); box-shadow:var(--shadow-card); }
+.category-card .cat-media{
+  aspect-ratio:4/3;
+  background:var(--ivory-deep);
+  overflow:hidden;
+}
+.category-card .cat-media img{ width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
+.category-card:hover .cat-media img{ transform:scale(1.05); }
+.category-card .cat-body{
+  padding:22px 24px 26px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px;
+}
+.category-card h3{ font-size:1.5rem; font-style:italic; }
+.category-card .cat-arrow{
+  flex:none;
+  width:38px; height:38px;
+  border:1px solid var(--gold-light);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--gold-royal);
+  transition:background .3s, color .3s, transform .35s var(--ease);
+}
+.category-card:hover .cat-arrow{ background:var(--gold-royal); color:var(--ivory); transform:rotate(-45deg); }
+
+/* ---------------------------------------------------------------------
+   ABOUT / STORY (blog section)
+   --------------------------------------------------------------------- */
+.about-grid{
+  display:grid;
+  gap:40px;
+  align-items:center;
+}
+@media (min-width:860px){
+  .about-grid{ grid-template-columns:0.9fr 1.1fr; gap:64px; }
+}
+.about-figure{
+  position:relative;
+  border:1px solid var(--gold-light);
+  padding:10px;
+  background:var(--white);
+}
+.about-figure img{ width:100%; aspect-ratio:1/1; object-fit:cover; }
+.about-figure .figure-caption{
+  position:absolute; left:22px; bottom:-16px;
+  background:var(--maroon-deep); color:var(--ivory);
+  font-family:var(--font-display); font-style:italic;
+  padding:10px 18px; font-size:0.95rem;
+  border:1px solid var(--gold-royal);
+}
+.about-copy h2{ font-size:clamp(1.8rem, 1.4rem + 1.6vw, 2.5rem); font-style:italic; margin-bottom:20px; }
+.about-copy p + p{ margin-top:16px; }
+.about-copy p{ color:var(--ink-soft); font-size:1.02rem; }
+.about-copy .signoff{
+  margin-top:22px;
+  font-family:var(--font-display);
+  font-style:italic;
+  color:var(--maroon-rich);
+  font-size:1.15rem;
+}
+
+/* ---------------------------------------------------------------------
+   GALLERY
+   --------------------------------------------------------------------- */
+.gallery-grid{
+  display:grid;
+  gap:14px;
+  grid-template-columns:repeat(2, 1fr);
+  grid-auto-rows:150px;
+}
+.gallery-grid figure{ margin:0; display:block; overflow:hidden; border:1px solid var(--gold-light); }
+.gallery-grid img{ width:100%; height:100%; object-fit:cover; transition:transform .5s var(--ease); }
+.gallery-grid figure:hover img{ transform:scale(1.07); }
+.gallery-grid .g-tall{ grid-row:span 2; }
+@media (min-width:640px){
+  .gallery-grid{ grid-template-columns:repeat(4, 1fr); grid-auto-rows:170px; }
+  .gallery-grid .g-wide{ grid-column:span 2; }
+}
+
+/* ---------------------------------------------------------------------
+   FAQ
+   --------------------------------------------------------------------- */
+.faq-list{ max-width:760px; margin-inline:auto; }
+.faq-item{ border-bottom:1px solid var(--gold-light); }
+.faq-item:first-child{ border-top:1px solid var(--gold-light); }
+.faq-q{
+  width:100%;
+  background:none; border:none;
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  padding:22px 4px;
+  text-align:left;
+  font-family:var(--font-display);
+  font-size:1.2rem;
+  color:var(--maroon-deep);
+}
+.faq-q .plus{
+  flex:none;
+  width:26px; height:26px;
+  position:relative;
+}
+.faq-q .plus::before, .faq-q .plus::after{
+  content:""; position:absolute; background:var(--gold-royal);
+  top:50%; left:50%; transform:translate(-50%,-50%);
+}
+.faq-q .plus::before{ width:16px; height:1.5px; }
+.faq-q .plus::after{ width:1.5px; height:16px; transition:transform .3s var(--ease); }
+.faq-item.is-open .plus::after{ transform:translate(-50%,-50%) rotate(90deg) scaleY(0); }
+.faq-a{
+  max-height:0; overflow:hidden;
+  transition:max-height .35s var(--ease);
+}
+.faq-a p{ padding:0 4px 22px; color:var(--ink-soft); max-width:640px; }
+.faq-item.is-open .faq-a{ max-height:220px; }
+
+/* ---------------------------------------------------------------------
+   CONTACT
+   --------------------------------------------------------------------- */
+.contact-grid{
+  display:grid; gap:28px;
+  grid-template-columns:1fr;
+}
+@media (min-width:760px){
+  .contact-grid{ grid-template-columns:repeat(3, 1fr); }
+}
+.contact-card{
+  border:1px solid rgba(228,206,156,0.35);
+  padding:26px 24px;
+}
+.contact-card .c-label{
+  font-size:0.72rem; letter-spacing:.1em; color:var(--gold-light);
+  margin-bottom:10px; display:block;
+}
+.contact-card p, .contact-card a{ font-size:1.05rem; }
+.contact-card a:hover{ color:var(--gold-light); }
+.contact-cta{ margin-top:36px; text-align:center; }
+
+/* ---------------------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------------------- */
+.site-footer{
+  background:#2E0A13;
+  color:#D8C3B4;
+  padding-block:52px 26px;
+}
+.footer-grid{
+  display:grid; gap:36px;
+  grid-template-columns:1fr;
+}
+@media (min-width:760px){
+  .footer-grid{ grid-template-columns:1.3fr 1fr 1fr; }
+}
+.footer-brand .brand-name{ color:var(--ivory); font-size:1.4rem; }
+.footer-brand .brand-sub{ color:var(--gold-light); }
+.footer-brand p{ margin-top:14px; font-size:0.92rem; color:#C7AE9C; max-width:280px; }
+.footer-col h4{ color:var(--ivory); font-size:1rem; font-style:italic; margin-bottom:14px; font-family:var(--font-display); }
+.footer-col ul{ display:flex; flex-direction:column; gap:10px; }
+.footer-col a, .footer-col p{ font-size:0.92rem; color:#C7AE9C; }
+.footer-col a:hover{ color:var(--gold-light); }
+.footer-bottom{
+  margin-top:44px; padding-top:22px;
+  border-top:1px solid rgba(228,206,156,0.18);
+  display:flex; flex-wrap:wrap; gap:10px;
+  justify-content:space-between;
+  font-size:0.8rem; color:#9C8474;
+}
+
+/* ---------------------------------------------------------------------
+   PRODUCT PAGES — page header, breadcrumb, grid, cards
+   --------------------------------------------------------------------- */
+.page-hero{
+  background:var(--maroon-deep);
+  color:var(--ivory);
+  padding-block:56px 44px;
+  text-align:center;
+}
+.page-hero .breadcrumb{
+  font-size:0.85rem; color:var(--gold-light);
+  display:flex; gap:8px; justify-content:center; margin-bottom:14px;
+}
+.page-hero .breadcrumb a:hover{ color:var(--ivory); }
+.page-hero h1{ color:var(--ivory); font-size:clamp(2.2rem, 1.7rem + 2vw, 3.2rem); font-style:italic; }
+.page-hero p{ margin-top:12px; color:#E7D6C7; }
+
+.rate-strip{
+  background:var(--ivory-deep);
+  border-bottom:1px solid var(--gold-light);
+  font-size:0.88rem;
+}
+.rate-strip .wrap{
+  display:flex; flex-wrap:wrap; gap:8px 24px;
+  padding-block:12px;
+  color:var(--maroon-rich);
+}
+.rate-strip strong{ color:var(--maroon-deep); }
+.rate-strip .rate-updated{ color:var(--ink-soft); margin-left:auto; }
+
+.catalogue{ padding-block:clamp(44px,7vw,72px); }
+.catalogue-toolbar{
+  display:flex; flex-wrap:wrap; gap:12px;
+  align-items:center; justify-content:space-between;
+  margin-bottom:30px;
+}
+.catalogue-count{ color:var(--ink-soft); font-size:0.92rem; }
+.filter-group{ display:flex; gap:8px; flex-wrap:wrap; }
+.filter-chip{
+  border:1px solid var(--gold-light);
+  background:var(--white);
+  padding:8px 16px;
+  font-size:0.85rem;
+  color:var(--maroon-rich);
+  transition:background .25s, color .25s, border-color .25s;
+}
+.filter-chip.active, .filter-chip:hover{ background:var(--maroon-deep); border-color:var(--maroon-deep); color:var(--ivory); }
+
+.product-grid{
+  display:grid;
+  gap:26px;
+  grid-template-columns:repeat(2, 1fr);
+}
+@media (min-width:640px){
+  .product-grid{ grid-template-columns:repeat(3, 1fr); gap:30px; }
+}
+@media (min-width:1020px){
+  .product-grid{ grid-template-columns:repeat(4, 1fr); }
+}
+
+.product-card{
+  background:var(--white);
+  border:1px solid var(--gold-light);
+  display:flex; flex-direction:column;
+  transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.product-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-card); }
+.product-media{
+  position:relative;
+  aspect-ratio:1/1;
+  background:var(--ivory-deep);
+  overflow:hidden;
+}
+.product-media img{ width:100%; height:100%; object-fit:cover; }
+.product-badge{
+  position:absolute; top:10px; left:10px;
+  background:var(--maroon-deep); color:var(--ivory);
+  font-size:0.68rem; letter-spacing:.05em;
+  padding:5px 10px;
+}
+.product-badge.unavailable{ background:var(--ink-soft); }
+.product-body{ padding:16px 16px 20px; flex:1; display:flex; flex-direction:column; gap:10px; }
+.product-body h3{
+  font-size:1.15rem; font-style:italic; font-weight:600;
+  color:var(--maroon-deep);
+}
+.product-specs{
+  display:flex; flex-wrap:wrap; gap:6px 14px;
+  font-size:0.78rem; color:var(--ink-soft);
+}
+.product-specs span{ white-space:nowrap; }
+.product-specs b{ color:var(--ink); font-weight:500; }
+.product-price{
+  margin-top:auto;
+  padding-top:10px;
+  border-top:1px dashed var(--gold-light);
+  display:flex; align-items:baseline; justify-content:space-between;
+}
+.product-price .amount{
+  font-family:var(--font-display);
+  font-size:1.4rem; font-weight:600;
+  color:var(--gold-royal);
+}
+.product-price .unavailable-note{ font-size:0.78rem; color:var(--ink-soft); }
+.product-enquire{
+  margin-top:2px;
+  text-align:center;
+  font-size:0.82rem;
+  padding:10px;
+  border:1px solid var(--gold-light);
+  color:var(--maroon-deep);
+  transition:background .25s, color .25s;
+}
+.product-enquire:hover{ background:var(--maroon-deep); color:var(--ivory); }
+
+.state-msg{
+  text-align:center;
+  padding:60px 20px;
+  color:var(--ink-soft);
+  font-size:1.02rem;
+}
+
+/* skeleton loading */
+.skeleton{ position:relative; overflow:hidden; background:var(--ivory-deep); }
+.skeleton::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.65), transparent);
+  transform:translateX(-100%);
+  animation:skeleton-sweep 1.4s infinite;
+}
+@keyframes skeleton-sweep{ to{ transform:translateX(100%); } }
+.product-card.skeleton-card .product-body div{ height:12px; background:var(--ivory-deep); border-radius:2px; margin-bottom:8px; width:70%; }
+
+/* ---------------------------------------------------------------------
+   WHATSAPP FLOATING BUTTON
+   --------------------------------------------------------------------- */
+.whatsapp-fab{
+  position:fixed; right:18px; bottom:18px; z-index:90;
+  width:54px; height:54px; border-radius:50%;
+  background:#2E0A13;
+  color:var(--ivory);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 12px 28px -12px rgba(43,25,18,0.55);
+  border:1px solid var(--gold-royal);
+  transition:transform .3s var(--ease);
+}
+.whatsapp-fab:hover{ transform:scale(1.08); }
+
+/* ---------------------------------------------------------------------
+   ADMIN PANEL
+   --------------------------------------------------------------------- */
+.admin-shell{ min-height:100vh; display:flex; flex-direction:column; }
+.admin-login{
+  flex:1; display:flex; align-items:center; justify-content:center;
+  padding:24px;
+}
+.admin-login form{
+  width:100%; max-width:360px;
+  background:var(--white);
+  border:1px solid var(--gold-light);
+  padding:36px 30px;
+}
+.admin-login h1{ font-size:1.6rem; font-style:italic; margin-bottom:6px; }
+.admin-login p.hint{ color:var(--ink-soft); font-size:0.9rem; margin-bottom:22px; }
+.field{ margin-bottom:16px; }
+.field label{ display:block; font-size:0.82rem; color:var(--ink-soft); margin-bottom:6px; }
+.field input, .field select, .field textarea{
+  width:100%; padding:11px 12px;
+  border:1px solid var(--gold-light);
+  background:var(--ivory);
+  font-family:var(--font-body); font-size:0.95rem; color:var(--ink);
+}
+.field textarea{ resize:vertical; min-height:70px; }
+.form-error{ color:#8A2436; font-size:0.85rem; margin-top:10px; min-height:1.2em; }
+.form-success{ color:#3E6B3A; font-size:0.85rem; margin-top:10px; min-height:1.2em; }
+
+.admin-topbar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px var(--gutter);
+  background:var(--maroon-deep); color:var(--ivory);
+}
+.admin-topbar .brand-name{ color:var(--ivory); font-size:1.2rem; }
+.admin-main{ flex:1; padding:32px var(--gutter) 80px; max-width:1100px; margin-inline:auto; width:100%; }
+.admin-section{ margin-bottom:52px; }
+.admin-section h2{ font-size:1.5rem; font-style:italic; margin-bottom:18px; }
+
+.rates-table, .products-table{ width:100%; border-collapse:collapse; }
+.rates-table th, .rates-table td,
+.products-table th, .products-table td{
+  text-align:left; padding:12px 10px; border-bottom:1px solid var(--gold-light);
+  font-size:0.9rem;
+}
+.rates-table input{ width:120px; padding:8px; border:1px solid var(--gold-light); }
+.products-table img{ width:44px; height:44px; object-fit:cover; border:1px solid var(--gold-light); }
+.table-scroll{ overflow-x:auto; }
+.tag{ font-size:0.72rem; padding:3px 9px; border:1px solid var(--gold-light); }
+.tag.on{ background:#E9F2E7; border-color:#3E6B3A; color:#3E6B3A; }
+.tag.off{ background:#F2E7E7; border-color:#8A2436; color:#8A2436; }
+
+.admin-card{ background:var(--white); border:1px solid var(--gold-light); padding:24px; }
+.form-grid{ display:grid; gap:14px; grid-template-columns:1fr; }
+@media (min-width:700px){ .form-grid{ grid-template-columns:1fr 1fr; } }
+.form-grid .span-2{ grid-column:1/-1; }
+.icon-btn{ background:none; border:none; color:var(--maroon-rich); font-size:0.85rem; padding:6px 8px; }
+.icon-btn:hover{ color:var(--gold-royal); }
+.icon-btn.danger:hover{ color:#8A2436; }
+
+/* ---------------------------------------------------------------------
+   REVEAL-ON-LOAD (single orchestrated hero entrance only)
+   --------------------------------------------------------------------- */
+.reveal{ opacity:0; transform:translateY(16px); }
+.reveal.in{ opacity:1; transform:none; transition:opacity .7s var(--ease), transform .7s var(--ease); }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Arpit Jewelrys</span>
+      <span class="brand-sub">NEAR MAIN MARKET · ITARSI</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" data-nav-link class="active">Home</a></li>
+        <li><a href="earrings.html" data-nav-link>Earrings</a></li>
+        <li><a href="necklace.html" data-nav-link>Necklace</a></li>
+        <li><a href="#visit">Visit Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="call-btn" href="tel:8085159312">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        8085159312
+      </a>
+      <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" data-mobile-nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="earrings.html">Earrings</a></li>
+      <li><a href="necklace.html">Necklace</a></li>
+      <li><a href="#visit">Visit Us</a></li>
+    </ul>
+    <a class="call-btn" href="tel:8085159312">Call 8085159312</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-inner reveal">
+      <p class="kicker"><span class="diamond"></span> Near Main Market, Itarsi</p>
+      <h1>Gold ab bas sapno mein nahi, apne ghar mein bhi hoga.</h1>
+      <p class="tagline">Sirf dekhiye nhi, gold ko apna bhi bnaiye.</p>
+      <p class="lede">Two years of handcrafted gold and silver jewellery for the families of Itarsi — every piece weighed, priced and explained honestly, right in front of you.</p>
+      <div class="hero-ctas">
+        <a href="#catalogue" class="btn btn-primary">See What We Have</a>
+        <a href="https://wa.me/918085159312" target="_blank" rel="noopener" class="btn btn-outline">Chat on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSIyNiIvPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSI3IiBmaWxsPSIjOEM2QTJCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik0yMDAgMTQ0IEwyMDAgMTY4Ii8+CiAgICA8cGF0aCBkPSJNMTcwIDE2OCBRMjAwIDE0OCAyMzAgMTY4IFEyMzggMjMwIDIwMCAyNjggUTE2MiAyMzAgMTcwIDE2OCBaIi8+CiAgICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIyMDAiIHI9IjYiIGZpbGw9IiNDOUEyNEIiIHN0cm9rZT0ibm9uZSIvPgogICAgPGNpcmNsZSBjeD0iMTgyIiBjeT0iMjIyIiByPSI0IiBmaWxsPSIjQzlBMjRCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxjaXJjbGUgY3g9IjIxOCIgY3k9IjIyMiIgcj0iNCIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgICA8cGF0aCBkPSJNMTg4IDI2OCBMMTgyIDI5NiBNMjAwIDI2OCBMMjAwIDMwMCBNMjEyIDI2OCBMMjE4IDI5NiIvPgogIDwvZz4KICA8dGV4dCB4PSIyMDAiIHk9IjM1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMiIgZmlsbD0iI0IwOEIzRiI+QVJQSVQgSkVXRUxSWVM8L3RleHQ+Cjwvc3ZnPgo=" alt="">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZD0iTTExMCA5MCBRMjAwIDIyMCAyOTAgOTAiLz4KICAgIDxwYXRoIGQ9Ik0xMjYgMTAwIFEyMDAgMjAwIDI3NCAxMDAiIHN0cm9rZS1kYXNoYXJyYXk9IjEgMTMiLz4KICAgIDxwYXRoIGQ9Ik0xNzAgMjE0IFEyMDAgMjYwIDIzMCAyMTQgUTI0NCAyNTAgMjAwIDI2OCBRMTU2IDI1MCAxNzAgMjE0IFoiLz4KICAgIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjIzMiIgcj0iNSIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgPC9nPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjQjA4QjNGIj5BUlBJVCBKRVdFTFJZUzwvdGV4dD4KPC9zdmc+Cg==" alt="">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPGVsbGlwc2UgY3g9IjIwMCIgY3k9IjIwMCIgcng9IjkwIiByeT0iNjYiLz4KICAgIDxlbGxpcHNlIGN4PSIyMDAiIGN5PSIyMDAiIHJ4PSI2NiIgcnk9IjQ2Ii8+CiAgICA8cGF0aCBkPSJNMTE2IDE3MiBMODQgMTYwIE0yODQgMTcyIEwzMTYgMTYwIE0xMTYgMjI4IEw4NCAyNDAgTTI4NCAyMjggTDMxNiAyNDAiLz4KICA8L2c+CiAgPHRleHQgeD0iMjAwIiB5PSIzNTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIxMyIgbGV0dGVyLXNwYWNpbmc9IjIiIGZpbGw9IiNCMDhCM0YiPkFSUElUIEpFV0VMUllTPC90ZXh0Pgo8L3N2Zz4K" alt="">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZD0iTTk2IDc2IFEyMDAgMTkwIDMwNCA3NiIvPgogICAgPHBhdGggZD0iTTE0MCAxNTAgUTIwMCAyMTAgMjYwIDE1MCIvPgogICAgPHBhdGggZD0iTTE4MCAyMzIgUTIwMCAyNjQgMjIwIDIzMiBRMjMwIDI1OCAyMDAgMjcyIFExNzAgMjU4IDE4MCAyMzIgWiIvPgogICAgPGNpcmNsZSBjeD0iMTE4IiBjeT0iMjkyIiByPSIxNiIvPgogICAgPHBhdGggZD0iTTExOCAzMDggTDExOCAzMjYiLz4KICAgIDxjaXJjbGUgY3g9IjI4MiIgY3k9IjI5MiIgcj0iMTYiLz4KICAgIDxwYXRoIGQ9Ik0yODIgMzA4IEwyODIgMzI2Ii8+CiAgPC9nPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjQjA4QjNGIj5BUlBJVCBKRVdFTFJZUzwvdGV4dD4KPC9zdmc+Cg==" alt="">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSIyNiIvPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSI3IiBmaWxsPSIjOEM2QTJCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik0yMDAgMTQ0IEwyMDAgMTY4Ii8+CiAgICA8cGF0aCBkPSJNMTcwIDE2OCBRMjAwIDE0OCAyMzAgMTY4IFEyMzggMjMwIDIwMCAyNjggUTE2MiAyMzAgMTcwIDE2OCBaIi8+CiAgICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIyMDAiIHI9IjYiIGZpbGw9IiNDOUEyNEIiIHN0cm9rZT0ibm9uZSIvPgogICAgPGNpcmNsZSBjeD0iMTgyIiBjeT0iMjIyIiByPSI0IiBmaWxsPSIjQzlBMjRCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxjaXJjbGUgY3g9IjIxOCIgY3k9IjIyMiIgcj0iNCIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgICA8cGF0aCBkPSJNMTg4IDI2OCBMMTgyIDI5NiBNMjAwIDI2OCBMMjAwIDMwMCBNMjEyIDI2OCBMMjE4IDI5NiIvPgogIDwvZz4KICA8dGV4dCB4PSIyMDAiIHk9IjM1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMiIgZmlsbD0iI0IwOEIzRiI+QVJQSVQgSkVXRUxSWVM8L3RleHQ+Cjwvc3ZnPgo=" alt="">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZD0iTTExMCA5MCBRMjAwIDIyMCAyOTAgOTAiLz4KICAgIDxwYXRoIGQ9Ik0xMjYgMTAwIFEyMDAgMjAwIDI3NCAxMDAiIHN0cm9rZS1kYXNoYXJyYXk9IjEgMTMiLz4KICAgIDxwYXRoIGQ9Ik0xNzAgMjE0IFEyMDAgMjYwIDIzMCAyMTQgUTI0NCAyNTAgMjAwIDI2OCBRMTU2IDI1MCAxNzAgMjE0IFoiLz4KICAgIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjIzMiIgcj0iNSIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgPC9nPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjQjA4QjNGIj5BUlBJVCBKRVdFTFJZUzwvdGV4dD4KPC9zdmc+Cg==" alt="">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSIyNiIvPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSI3IiBmaWxsPSIjOEM2QTJCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik0yMDAgMTQ0IEwyMDAgMTY4Ii8+CiAgICA8cGF0aCBkPSJNMTcwIDE2OCBRMjAwIDE0OCAyMzAgMTY4IFEyMzggMjMwIDIwMCAyNjggUTE2MiAyMzAgMTcwIDE2OCBaIi8+CiAgICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIyMDAiIHI9IjYiIGZpbGw9IiNDOUEyNEIiIHN0cm9rZT0ibm9uZSIvPgogICAgPGNpcmNsZSBjeD0iMTgyIiBjeT0iMjIyIiByPSI0IiBmaWxsPSIjQzlBMjRCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxjaXJjbGUgY3g9IjIxOCIgY3k9IjIyMiIgcj0iNCIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgICA8cGF0aCBkPSJNMTg4IDI2OCBMMTgyIDI5NiBNMjAwIDI2OCBMMjAwIDMwMCBNMjEyIDI2OCBMMjE4IDI5NiIvPgogIDwvZz4KICA8dGV4dCB4PSIyMDAiIHk9IjM1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMiIgZmlsbD0iI0IwOEIzRiI+QVJQSVQgSkVXRUxSWVM8L3RleHQ+Cjwvc3ZnPgo=" alt="">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZD0iTTExMCA5MCBRMjAwIDIyMCAyOTAgOTAiLz4KICAgIDxwYXRoIGQ9Ik0xMjYgMTAwIFEyMDAgMjAwIDI3NCAxMDAiIHN0cm9rZS1kYXNoYXJyYXk9IjEgMTMiLz4KICAgIDxwYXRoIGQ9Ik0xNzAgMjE0IFEyMDAgMjYwIDIzMCAyMTQgUTI0NCAyNTAgMjAwIDI2OCBRMTU2IDI1MCAxNzAgMjE0IFoiLz4KICAgIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjIzMiIgcj0iNSIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgPC9nPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjQjA4QjNGIj5BUlBJVCBKRVdFTFJZUzwvdGV4dD4KPC9zdmc+Cg==" alt="">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPGVsbGlwc2UgY3g9IjIwMCIgY3k9IjIwMCIgcng9IjkwIiByeT0iNjYiLz4KICAgIDxlbGxpcHNlIGN4PSIyMDAiIGN5PSIyMDAiIHJ4PSI2NiIgcnk9IjQ2Ii8+CiAgICA8cGF0aCBkPSJNMTE2IDE3MiBMODQgMTYwIE0yODQgMTcyIEwzMTYgMTYwIE0xMTYgMjI4IEw4NCAyNDAgTTI4NCAyMjggTDMxNiAyNDAiLz4KICA8L2c+CiAgPHRleHQgeD0iMjAwIiB5PSIzNTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIxMyIgbGV0dGVyLXNwYWNpbmc9IjIiIGZpbGw9IiNCMDhCM0YiPkFSUElUIEpFV0VMUllTPC90ZXh0Pgo8L3N2Zz4K" alt="">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZD0iTTk2IDc2IFEyMDAgMTkwIDMwNCA3NiIvPgogICAgPHBhdGggZD0iTTE0MCAxNTAgUTIwMCAyMTAgMjYwIDE1MCIvPgogICAgPHBhdGggZD0iTTE4MCAyMzIgUTIwMCAyNjQgMjIwIDIzMiBRMjMwIDI1OCAyMDAgMjcyIFExNzAgMjU4IDE4MCAyMzIgWiIvPgogICAgPGNpcmNsZSBjeD0iMTE4IiBjeT0iMjkyIiByPSIxNiIvPgogICAgPHBhdGggZD0iTTExOCAzMDggTDExOCAzMjYiLz4KICAgIDxjaXJjbGUgY3g9IjI4MiIgY3k9IjI5MiIgcj0iMTYiLz4KICAgIDxwYXRoIGQ9Ik0yODIgMzA4IEwyODIgMzI2Ii8+CiAgPC9nPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjQjA4QjNGIj5BUlBJVCBKRVdFTFJZUzwvdGV4dD4KPC9zdmc+Cg==" alt="">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSIyNiIvPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSI3IiBmaWxsPSIjOEM2QTJCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik0yMDAgMTQ0IEwyMDAgMTY4Ii8+CiAgICA8cGF0aCBkPSJNMTcwIDE2OCBRMjAwIDE0OCAyMzAgMTY4IFEyMzggMjMwIDIwMCAyNjggUTE2MiAyMzAgMTcwIDE2OCBaIi8+CiAgICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIyMDAiIHI9IjYiIGZpbGw9IiNDOUEyNEIiIHN0cm9rZT0ibm9uZSIvPgogICAgPGNpcmNsZSBjeD0iMTgyIiBjeT0iMjIyIiByPSI0IiBmaWxsPSIjQzlBMjRCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxjaXJjbGUgY3g9IjIxOCIgY3k9IjIyMiIgcj0iNCIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgICA8cGF0aCBkPSJNMTg4IDI2OCBMMTgyIDI5NiBNMjAwIDI2OCBMMjAwIDMwMCBNMjEyIDI2OCBMMjE4IDI5NiIvPgogIDwvZz4KICA8dGV4dCB4PSIyMDAiIHk9IjM1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMiIgZmlsbD0iI0IwOEIzRiI+QVJQSVQgSkVXRUxSWVM8L3RleHQ+Cjwvc3ZnPgo=" alt="">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZD0iTTExMCA5MCBRMjAwIDIyMCAyOTAgOTAiLz4KICAgIDxwYXRoIGQ9Ik0xMjYgMTAwIFEyMDAgMjAwIDI3NCAxMDAiIHN0cm9rZS1kYXNoYXJyYXk9IjEgMTMiLz4KICAgIDxwYXRoIGQ9Ik0xNzAgMjE0IFEyMDAgMjYwIDIzMCAyMTQgUTI0NCAyNTAgMjAwIDI2OCBRMTU2IDI1MCAxNzAgMjE0IFoiLz4KICAgIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjIzMiIgcj0iNSIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgPC9nPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjQjA4QjNGIj5BUlBJVCBKRVdFTFJZUzwvdGV4dD4KPC9zdmc+Cg==" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEE WHAT WE HAVE ================= -->
+  <section class="section" id="catalogue">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2>See what we have</h2>
+        <p>Two collections, handcrafted with care. Choose where you'd like to begin.</p>
+      </div>
+
+      <div class="category-grid">
+        <a class="category-card" href="earrings.html">
+          <div class="cat-media"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSIyNiIvPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSI3IiBmaWxsPSIjOEM2QTJCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik0yMDAgMTQ0IEwyMDAgMTY4Ii8+CiAgICA8cGF0aCBkPSJNMTcwIDE2OCBRMjAwIDE0OCAyMzAgMTY4IFEyMzggMjMwIDIwMCAyNjggUTE2MiAyMzAgMTcwIDE2OCBaIi8+CiAgICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIyMDAiIHI9IjYiIGZpbGw9IiNDOUEyNEIiIHN0cm9rZT0ibm9uZSIvPgogICAgPGNpcmNsZSBjeD0iMTgyIiBjeT0iMjIyIiByPSI0IiBmaWxsPSIjQzlBMjRCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxjaXJjbGUgY3g9IjIxOCIgY3k9IjIyMiIgcj0iNCIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgICA8cGF0aCBkPSJNMTg4IDI2OCBMMTgyIDI5NiBNMjAwIDI2OCBMMjAwIDMwMCBNMjEyIDI2OCBMMjE4IDI5NiIvPgogIDwvZz4KICA8dGV4dCB4PSIyMDAiIHk9IjM1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMiIgZmlsbD0iI0IwOEIzRiI+QVJQSVQgSkVXRUxSWVM8L3RleHQ+Cjwvc3ZnPgo=" alt="Earrings collection"></div>
+          <div class="cat-body">
+            <h3>Earrings</h3>
+            <span class="cat-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </span>
+          </div>
+        </a>
+        <a class="category-card" href="necklace.html">
+          <div class="cat-media"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZD0iTTExMCA5MCBRMjAwIDIyMCAyOTAgOTAiLz4KICAgIDxwYXRoIGQ9Ik0xMjYgMTAwIFEyMDAgMjAwIDI3NCAxMDAiIHN0cm9rZS1kYXNoYXJyYXk9IjEgMTMiLz4KICAgIDxwYXRoIGQ9Ik0xNzAgMjE0IFEyMDAgMjYwIDIzMCAyMTQgUTI0NCAyNTAgMjAwIDI2OCBRMTU2IDI1MCAxNzAgMjE0IFoiLz4KICAgIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjIzMiIgcj0iNSIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgPC9nPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjQjA4QjNGIj5BUlBJVCBKRVdFTFJZUzwvdGV4dD4KPC9zdmc+Cg==" alt="Necklace collection"></div>
+          <div class="cat-body">
+            <h3>Necklace</h3>
+            <span class="cat-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR STORY ================= -->
+  <section class="section section--ivory-deep" id="story">
+    <div class="wrap about-grid">
+      <div class="about-figure">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZD0iTTk2IDc2IFEyMDAgMTkwIDMwNCA3NiIvPgogICAgPHBhdGggZD0iTTE0MCAxNTAgUTIwMCAyMTAgMjYwIDE1MCIvPgogICAgPHBhdGggZD0iTTE4MCAyMzIgUTIwMCAyNjQgMjIwIDIzMiBRMjMwIDI1OCAyMDAgMjcyIFExNzAgMjU4IDE4MCAyMzIgWiIvPgogICAgPGNpcmNsZSBjeD0iMTE4IiBjeT0iMjkyIiByPSIxNiIvPgogICAgPHBhdGggZD0iTTExOCAzMDggTDExOCAzMjYiLz4KICAgIDxjaXJjbGUgY3g9IjI4MiIgY3k9IjI5MiIgcj0iMTYiLz4KICAgIDxwYXRoIGQ9Ik0yODIgMzA4IEwyODIgMzI2Ii8+CiAgPC9nPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjQjA4QjNGIj5BUlBJVCBKRVdFTFJZUzwvdGV4dD4KPC9zdmc+Cg==" alt="A piece from the Arpit Jewelrys workshop">
+        <span class="figure-caption">Handcrafted in Itarsi</span>
+      </div>
+      <div class="about-copy">
+        <h2>Two years, one promise</h2>
+        <p>Arpit Jewelrys began two years ago with a small counter near the Main Market in Itarsi, and a simple idea: buying gold should feel personal, not transactional. No pressure, no confusing prices — just honest conversations about what suits you and what it truly costs.</p>
+        <p>Since then, one design at a time and one family at a time, that small counter has grown into a name people trust for weddings, festivals and everyday wear. Every piece here is chosen the way we'd choose it for our own family — checked for purity, weighed in front of you, and explained without any hidden charges.</p>
+        <p class="signoff">— Arpit, Founder</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2>Gallery</h2>
+        <p>A closer look at the craft — from everyday pieces to bridal sets.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="g-wide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZD0iTTk2IDc2IFEyMDAgMTkwIDMwNCA3NiIvPgogICAgPHBhdGggZD0iTTE0MCAxNTAgUTIwMCAyMTAgMjYwIDE1MCIvPgogICAgPHBhdGggZD0iTTE4MCAyMzIgUTIwMCAyNjQgMjIwIDIzMiBRMjMwIDI1OCAyMDAgMjcyIFExNzAgMjU4IDE4MCAyMzIgWiIvPgogICAgPGNpcmNsZSBjeD0iMTE4IiBjeT0iMjkyIiByPSIxNiIvPgogICAgPHBhdGggZD0iTTExOCAzMDggTDExOCAzMjYiLz4KICAgIDxjaXJjbGUgY3g9IjI4MiIgY3k9IjI5MiIgcj0iMTYiLz4KICAgIDxwYXRoIGQ9Ik0yODIgMzA4IEwyODIgMzI2Ii8+CiAgPC9nPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjQjA4QjNGIj5BUlBJVCBKRVdFTFJZUzwvdGV4dD4KPC9zdmc+Cg==" alt="Bridal jewellery set"></figure>
+        <figure class="g-wide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZD0iTTExMCA5MCBRMjAwIDIyMCAyOTAgOTAiLz4KICAgIDxwYXRoIGQ9Ik0xMjYgMTAwIFEyMDAgMjAwIDI3NCAxMDAiIHN0cm9rZS1kYXNoYXJyYXk9IjEgMTMiLz4KICAgIDxwYXRoIGQ9Ik0xNzAgMjE0IFEyMDAgMjYwIDIzMCAyMTQgUTI0NCAyNTAgMjAwIDI2OCBRMTU2IDI1MCAxNzAgMjE0IFoiLz4KICAgIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjIzMiIgcj0iNSIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgPC9nPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjQjA4QjNGIj5BUlBJVCBKRVdFTFJZUzwvdGV4dD4KPC9zdmc+Cg==" alt="Necklace craftsmanship"></figure>
+        <figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSIyNiIvPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSI3IiBmaWxsPSIjOEM2QTJCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik0yMDAgMTQ0IEwyMDAgMTY4Ii8+CiAgICA8cGF0aCBkPSJNMTcwIDE2OCBRMjAwIDE0OCAyMzAgMTY4IFEyMzggMjMwIDIwMCAyNjggUTE2MiAyMzAgMTcwIDE2OCBaIi8+CiAgICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIyMDAiIHI9IjYiIGZpbGw9IiNDOUEyNEIiIHN0cm9rZT0ibm9uZSIvPgogICAgPGNpcmNsZSBjeD0iMTgyIiBjeT0iMjIyIiByPSI0IiBmaWxsPSIjQzlBMjRCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxjaXJjbGUgY3g9IjIxOCIgY3k9IjIyMiIgcj0iNCIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgICA8cGF0aCBkPSJNMTg4IDI2OCBMMTgyIDI5NiBNMjAwIDI2OCBMMjAwIDMwMCBNMjEyIDI2OCBMMjE4IDI5NiIvPgogIDwvZz4KICA8dGV4dCB4PSIyMDAiIHk9IjM1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMiIgZmlsbD0iI0IwOEIzRiI+QVJQSVQgSkVXRUxSWVM8L3RleHQ+Cjwvc3ZnPgo=" alt="Earring detail"></figure>
+        <figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPGVsbGlwc2UgY3g9IjIwMCIgY3k9IjIwMCIgcng9IjkwIiByeT0iNjYiLz4KICAgIDxlbGxpcHNlIGN4PSIyMDAiIGN5PSIyMDAiIHJ4PSI2NiIgcnk9IjQ2Ii8+CiAgICA8cGF0aCBkPSJNMTE2IDE3MiBMODQgMTYwIE0yODQgMTcyIEwzMTYgMTYwIE0xMTYgMjI4IEw4NCAyNDAgTTI4NCAyMjggTDMxNiAyNDAiLz4KICA8L2c+CiAgPHRleHQgeD0iMjAwIiB5PSIzNTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIxMyIgbGV0dGVyLXNwYWNpbmc9IjIiIGZpbGw9IiNCMDhCM0YiPkFSUElUIEpFV0VMUllTPC90ZXh0Pgo8L3N2Zz4K" alt="Bangle detail"></figure>
+        <figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZD0iTTExMCA5MCBRMjAwIDIyMCAyOTAgOTAiLz4KICAgIDxwYXRoIGQ9Ik0xMjYgMTAwIFEyMDAgMjAwIDI3NCAxMDAiIHN0cm9rZS1kYXNoYXJyYXk9IjEgMTMiLz4KICAgIDxwYXRoIGQ9Ik0xNzAgMjE0IFEyMDAgMjYwIDIzMCAyMTQgUTI0NCAyNTAgMjAwIDI2OCBRMTU2IDI1MCAxNzAgMjE0IFoiLz4KICAgIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjIzMiIgcj0iNSIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgPC9nPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjQjA4QjNGIj5BUlBJVCBKRVdFTFJZUzwvdGV4dD4KPC9zdmc+Cg==" alt="Necklace detail"></figure>
+        <figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0ZCRjZFRSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjM3MiIgaGVpZ2h0PSIzNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTI0QiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM4QzZBMkIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSIyNiIvPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTE4IiByPSI3IiBmaWxsPSIjOEM2QTJCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik0yMDAgMTQ0IEwyMDAgMTY4Ii8+CiAgICA8cGF0aCBkPSJNMTcwIDE2OCBRMjAwIDE0OCAyMzAgMTY4IFEyMzggMjMwIDIwMCAyNjggUTE2MiAyMzAgMTcwIDE2OCBaIi8+CiAgICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIyMDAiIHI9IjYiIGZpbGw9IiNDOUEyNEIiIHN0cm9rZT0ibm9uZSIvPgogICAgPGNpcmNsZSBjeD0iMTgyIiBjeT0iMjIyIiByPSI0IiBmaWxsPSIjQzlBMjRCIiBzdHJva2U9Im5vbmUiLz4KICAgIDxjaXJjbGUgY3g9IjIxOCIgY3k9IjIyMiIgcj0iNCIgZmlsbD0iI0M5QTI0QiIgc3Ryb2tlPSJub25lIi8+CiAgICA8cGF0aCBkPSJNMTg4IDI2OCBMMTgyIDI5NiBNMjAwIDI2OCBMMjAwIDMwMCBNMjEyIDI2OCBMMjE4IDI5NiIvPgogIDwvZz4KICA8dGV4dCB4PSIyMDAiIHk9IjM1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMiIgZmlsbD0iI0IwOEIzRiI+QVJQSVQgSkVXRUxSWVM8L3RleHQ+Cjwvc3ZnPgo=" alt="Earring craftsmanship"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section section--ivory-deep" id="faq">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2>Questions, answered</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q"><span>Do you sell only in-store, or can I browse online first?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>This website is a catalogue to help you browse designs, purity, weight and pricing before you visit. All purchases, exchanges and custom orders happen at our store near Main Market, Itarsi — there's no online payment or delivery.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>How is the price of each piece calculated?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Every price shown is calculated from the day's gold or silver rate, the piece's weight and purity, and its making charges — the same transparent method we use at our counter. Rates change daily, so please confirm the final price with us before visiting.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Can you make a custom design or resize a piece?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Yes. Many customers bring a reference design or a family heirloom for us to rework. Call or message us on WhatsApp with what you have in mind and we'll guide you through it in person.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VISIT / CONTACT ================= -->
+  <section class="section section--maroon" id="visit">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2>Visit the store</h2>
+        <p>We'd love to show you in person — every piece looks even better in hand.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <span class="c-label">ADDRESS</span>
+          <p>Near Main Market, Itarsi</p>
+        </div>
+        <div class="contact-card">
+          <span class="c-label">CALL / WHATSAPP</span>
+          <p><a href="tel:8085159312">8085159312</a></p>
+        </div>
+        <div class="contact-card">
+          <span class="c-label">STORE HOURS</span>
+          <p>10 AM – 9 PM, all days</p>
+        </div>
+      </div>
+      <div class="contact-cta">
+        <a href="https://wa.me/918085159312" target="_blank" rel="noopener" class="btn btn-primary">Message on WhatsApp</a>
+        <a href="https://instagram.com/wdym_arpittt" target="_blank" rel="noopener" class="btn btn-outline" style="margin-left:14px;">@wdym_arpittt on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-name">Arpit Jewelrys</span>
+      <span class="brand-sub">NEAR MAIN MARKET · ITARSI</span>
+      <p>Sirf dekhiye nhi, gold ko apna bhi bnaiye.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="earrings.html">Earrings</a></li>
+        <li><a href="necklace.html">Necklace</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><p>Near Main Market, Itarsi</p></li>
+        <li><a href="tel:8085159312">8085159312</a></li>
+        <li><p>10 AM – 9 PM, all days</p></li>
+        <li><a href="https://instagram.com/wdym_arpittt" target="_blank" rel="noopener">@wdym_arpittt</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© <span id="year"></span> Arpit Jewelrys, Itarsi. All rights reserved.</span>
+    <span>Prices are indicative and subject to change with daily metal rates.</span>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/918085159312" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 3.06 16.65L2 21l4.46-1.02a8.83 8.83 0 0 0 4.24 1.08h.01a8.86 8.86 0 0 0 6.9-14.74zM10.71 19.4h-.01a7.36 7.36 0 0 1-3.75-1.03l-.27-.16-2.79.64.64-2.72-.18-.28a7.38 7.38 0 1 1 13.7-3.92 7.4 7.4 0 0 1-7.34 7.47zm4.05-5.53c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.1-.66-.59-1.11-1.32-1.24-1.54-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.07-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.05-.59.28-.2.22-.78.76-.78 1.85s.8 2.14.91 2.29c.11.15 1.57 2.4 3.81 3.36.53.23.95.37 1.27.47.53.17 1.02.15 1.4.09.43-.06 1.31-.53 1.49-1.05.18-.51.18-.95.13-1.05-.05-.1-.2-.16-.42-.27z"/></svg>
+</a>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // ---- mobile nav toggle ----
+  const navToggle = document.querySelector('[data-nav-toggle]');
+  const mobileNav = document.querySelector('[data-mobile-nav]');
+  if (navToggle && mobileNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    mobileNav.querySelectorAll('a').forEach((link) =>
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+  }
+
+  // ---- mark active nav link ----
+  const path = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('a[data-nav-link]').forEach((a) => {
+    if (a.getAttribute('href') === path) a.classList.add('active');
+  });
+
+  // ---- FAQ accordion ----
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    const q = item.querySelector('.faq-q');
+    q.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('is-open');
+      item.parentElement.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('is-open'));
+      if (!wasOpen) item.classList.add('is-open');
+    });
+  });
+
+  // ---- single orchestrated hero entrance ----
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    setTimeout(() => el.classList.add('in'), 90 * i);
+  });
+});
+
+</script>
+</body>
+</html>
